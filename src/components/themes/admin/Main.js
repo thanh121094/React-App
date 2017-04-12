@@ -3,9 +3,11 @@
  */
 import React from 'react';
 import './stylesheet.css';
-import TopMenu from './TopMenu';
 import LeftMenu from './LeftMenu';
-import Draw from 'components/show-data/draw/Draw'
+import RightMenu from './RightMenu';
+import Draw from 'components/show-data/draw/Draw';
+import Show from '../../show-data/show/Show';
+
 /**
  * Created by Peter Hoang Nguyen
  * Email: vntopmas@gmail.com
@@ -21,23 +23,24 @@ class Main extends React.Component {
 
     componentWillMount() {
         let {dispatch} = this.props;
-
     }
-drawonClick() {
-   alert('click')
-}
+
     render() {
         let menuList = ['Menu 01', 'Menu 02', 'Menu 03']
         return (
             <div className="main">
-               user: {process.env.REACT_APP_USER_LOCAL_STORAGE_KEY}
-                <div className="left-menu">
-                    <LeftMenu menu={menuList} header="day la header"/>
+               {/*user: {process.env.REACT_APP_USER_LOCAL_STORAGE_KEY}*/}
+                {/*<div className="left-menu">*/}
+                    {/*<LeftMenu menu={menuList} header="day la header"/>*/}
+                {/*</div>*/}
+                {/*<div className="body-content">*/}
+                    {/*body*/}
+                    {/*<Draw onClick={this.drawonClick}/>*/}
+                {/*</div>*/}
+                <div className="right-menu">
+                    <RightMenu/>
                 </div>
-                <div className="body-content">
-                    body
-                    <Draw onClick={this.drawonClick}/>
-                </div>
+                <Show/>
             </div>
         );
     }
